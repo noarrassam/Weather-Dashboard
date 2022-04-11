@@ -30,10 +30,21 @@ function getData() {
       document.getElementById("ul").appendChild(li);
       console.log(ul);
       li.addEventListener("click", function () {
-        // console.log(item);
+        //console.log(item);
         ajaxFunc(item).then(function (res) {
-          console.log(res.list[0].main.temp);
-          res.list[0].main.temp;
+          if (item) {
+            let ulPrg = document.getElementById("ulPrg");
+            let liPrg = document.createElement("li");
+            let liPrg1 = document.createElement("li");
+            let liPrg2 = document.createElement("li");
+            var htmlTemp = "°C";
+            liPrg.innerHTML = "Temp:" + " " + res.list[0].main.temp + htmlTemp;
+            liPrg1.innerHTML = "Wind:" + " " + res.list[0].wind.speed;
+            liPrg2.innerHTML = "Humidity: " + " " + res.list[0].main.humidity;
+            ulPrg.appendChild(liPrg);
+            ulPrg.appendChild(liPrg1);
+            ulPrg.appendChild(liPrg2);
+          }
         });
       });
     });
