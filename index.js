@@ -138,7 +138,6 @@ let show5DaysWeatherDetails = (res) => {
 
   $("#cityFiveWeatherForcastUL").empty();
   res.daily.forEach((item, index) => {
-    //
     if (index > 0 && index < 6) {
       var date = item.dt * 1000;
       var mydate = new Date(date);
