@@ -12,6 +12,7 @@ function setData() {
   if (cities.value.trim() != 0) {
     ajaxCurrentWeather(cities.value).then(function (res) {
       updateCityList(res.name, res);
+      loopOverCityList(res);
     });
   }
 }
@@ -27,7 +28,9 @@ let updateCityList = (city, res) => {
     ajaxCurrentWeather(cities.value).then(function (res) {
       showCurrentWeatherDetails(res);
     });
-    ajaxForecast(cities.value).then(function (res) {
+    let lat = res.coord["lat"];
+    let lon = res.coord["lon"];
+    ajaxForecast(lat, lon).then(function (res) {
       show5DaysWeatherDetails(res);
     });
   });
@@ -90,12 +93,7 @@ let currentDate = (res) => {
 };
 
 let forecastDates = (res) => {
-  res.list.forEach((item) => {
-    console.log(item.dt_txt);
-  });
-
-  var date = res.list[0].dt_txt;
-  var mydate = new Date(date);
+  var mydate = new Date(res);
   console.log(mydate);
   var day = [
     "Sunday",
@@ -129,8 +127,7 @@ let forecastDates = (res) => {
 let weatherForecastImage = (res) => {
   let img = document.createElement("img");
   img.setAttribute("id", "wicon");
-  let icon = res.list[0].weather[0].icon;
-  var iconurl = "http://openweathermap.org/img/w/" + icon + ".png";
+  var iconurl = "http://openweathermap.org/img/w/" + res + ".png";
   img.setAttribute("src", iconurl);
   let image = document.getElementById("cityFiveWeatherForcastUL").append(img);
   return image;
@@ -140,18 +137,24 @@ let show5DaysWeatherDetails = (res) => {
   var htmlTemp = "°C";
 
   $("#cityFiveWeatherForcastUL").empty();
-  res.list.forEach((item, index) => {
-    weatherForecastImage(res);
-    $("#cityFiveWeatherForcastUL").append(
-      "<li>" + forecastDates(res) + "</li>",
-      "<li>" + "Temp:" + " " + item.main.temp + htmlTemp + +"</li>",
-      "<li>" + "Wind:" + " " + item.wind.speed + "</li>",
-      "<li>" + "Humidity: " + " " + item.main.humidity + "</li>"
-    );
+  res.daily.forEach((item, index) => {
+    //
+    if (index > 0 && index < 6) {
+      var date = item.dt * 1000;
+      var mydate = new Date(date);
+      var icons = item.weather[0].icon;
+      weatherForecastImage(icons);
+      $("#cityFiveWeatherForcastUL").append(
+        "<li>" + forecastDates(mydate) + "</li>",
+        "<li>" + "Temp:" + " " + item.temp.day + htmlTemp + "</li>",
+        "<li>" + "Wind:" + " " + item.humidity + "</li>",
+        "<li>" + "Humidity: " + " " + item.wind_speed + "</li>"
+      );
+    }
   });
 };
 
-function loopOverCityList() {
+function loopOverCityList(res) {
   if (localStorage.getItem("key") == null) {
     cityNamesList = [];
   } else {
@@ -165,9 +168,11 @@ function loopOverCityList() {
       cityNamesLi.addEventListener("click", function () {
         ajaxCurrentWeather(item).then(function (res) {
           showCurrentWeatherDetails(res);
-        });
-        ajaxForecast(item).then(function (res) {
-          show5DaysWeatherDetails(res);
+          let lon = res.coord.lon;
+          let lat = res.coord.lat;
+          ajaxForecast(lat, lon).then(function (res) {
+            show5DaysWeatherDetails(res);
+          });
         });
       });
     });
