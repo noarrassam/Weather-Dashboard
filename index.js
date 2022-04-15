@@ -132,7 +132,8 @@ let weatherForecastImage = (res) => {
   let icon = res.list[0].weather[0].icon;
   var iconurl = "http://openweathermap.org/img/w/" + icon + ".png";
   img.setAttribute("src", iconurl);
-  return img;
+  let image = document.getElementById("cityFiveWeatherForcastUL").append(img);
+  return image;
 };
 
 let show5DaysWeatherDetails = (res) => {
@@ -140,13 +141,13 @@ let show5DaysWeatherDetails = (res) => {
 
   $("#cityFiveWeatherForcastUL").empty();
   res.list.forEach((item, index) => {
+    weatherForecastImage(res);
     $("#cityFiveWeatherForcastUL").append(
       "<li>" + forecastDates(res) + "</li>",
-      "<li>" + "Temp:" + " " + item.main.temp + htmlTemp +"</li>",
+      "<li>" + "Temp:" + " " + item.main.temp + htmlTemp + +"</li>",
       "<li>" + "Wind:" + " " + item.wind.speed + "</li>",
       "<li>" + "Humidity: " + " " + item.main.humidity + "</li>"
     );
-    //$("#cityWeatherForcastUL").append(weatherForecastImage(res));
   });
 };
 
