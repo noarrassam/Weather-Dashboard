@@ -50,8 +50,8 @@ let showCurrentWeatherDetails = (res) => {
   let array = [
     res.name + ", " + currentDate(res) + " ",
     "Temp:" + " " + res.main.temp + htmlTemp,
-    "Wind:" + " " + res.wind.speed,
-    "Humidity:" + " " + res.main.humidity,
+    "Wind:" + " " + res.wind.speed + " " + "MPH",
+    "Humidity:" + " " + res.main.humidity + " " + "%",
   ];
 
   $("#cityWeatherForcastUL").empty();
@@ -147,8 +147,8 @@ let show5DaysWeatherDetails = (res) => {
       $("#cityFiveWeatherForcastUL").append(
         "<li>" + forecastDates(mydate) + "</li>",
         "<li>" + "Temp:" + " " + item.temp.day + htmlTemp + "</li>",
-        "<li>" + "Wind:" + " " + item.humidity + "</li>",
-        "<li>" + "Humidity: " + " " + item.wind_speed + "</li>"
+        "<li>" + "Wind:" + " " + item.humidity + " " + "MPH" + "</li>",
+        "<li>" + "Humidity: " + " " + item.wind_speed + " " + "%" + "</li>"
       );
     }
   });
