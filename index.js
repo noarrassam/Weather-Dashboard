@@ -12,7 +12,7 @@ function setData() {
   if (cities.value.trim() != 0) {
     ajaxCurrentWeather(cities.value).then(function (res) {
       updateCityList(res.name, res);
-      loopOverCityList(res);
+      loopOverCityList();
     });
   }
 }
@@ -154,7 +154,7 @@ let show5DaysWeatherDetails = (res) => {
   });
 };
 
-function loopOverCityList(res) {
+function loopOverCityList() {
   if (localStorage.getItem("key") == null) {
     cityNamesList = [];
   } else {
