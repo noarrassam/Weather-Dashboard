@@ -12,7 +12,6 @@ function setData() {
   if (cities.value.trim() != 0) {
     ajaxCurrentWeather(cities.value).then(function (res) {
       updateCityList(res.name, res);
-      loopOverCityList();
     });
   }
 }
