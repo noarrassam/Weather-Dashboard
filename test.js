@@ -1,13 +1,19 @@
 // console.log(response);
 // var htmlTemp = "°C";
-
+import { ajaxFunc } from "./ajaxFunc.js";
 // prg.innerHTML = "Current Temp" + " " + res.list[0].main.temp + htmlTemp;
-
-// let img = document.createElement("img");
-// img.setAttribute("id", "wicon");
-// let icon = response.list[0].weather[0].icon;
-// var iconurl = "http://openweathermap.org/img/w/" + icon + ".png";
-// img.setAttribute("src", iconurl);
+function callLon() {
+  ajaxFunc("London").then(function (response) {
+    let img = document.createElement("img");
+    let div = document.createElement("div");
+    img.setAttribute("id", "wicon");
+    let icon = response.list[0].weather[0].icon;
+    var iconurl = "http://openweathermap.org/img/w/" + icon + ".png";
+    img.setAttribute("src", iconurl);
+    div.appendChild(img);
+  });
+}
+callLon();
 
 // let dates = document.createElement("p");
 // var date = response.list[0].dt_txt;
@@ -46,6 +52,5 @@
 //   ", " +
 //   mydate.getFullYear();
 // dates.innerHTML = str;
-// div.appendChild(img);
 
 // div.appendChild(dates);
