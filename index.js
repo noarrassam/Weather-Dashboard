@@ -26,11 +26,9 @@ let updateCityList = (city, res) => {
   citiesLi.addEventListener("click", function () {
     ajaxCurrentWeather(cities.value).then(function (res) {
       showCurrentWeatherDetails(res);
-      currentDate(res);
     });
     ajaxForecast(cities.value).then(function (res) {
-      // show5DaysWeatherDetails(res);
-      // forecastDates(res);
+      show5DaysWeatherDetails(res);
     });
   });
 };
@@ -46,7 +44,6 @@ let cuurentWeatherImage = (res) => {
 
 let showCurrentWeatherDetails = (res) => {
   var htmlTemp = "°C";
-  //let cuurentWeatherImage = cuurentWeatherImage(res);
   let array = [
     res.name + ", " + currentDate(res) + " ",
     "Temp:" + " " + res.main.temp + htmlTemp,
@@ -143,15 +140,13 @@ let show5DaysWeatherDetails = (res) => {
 
   $("#cityFiveWeatherForcastUL").empty();
   res.list.forEach((item, index) => {
-    //if (index > 0) {
     $("#cityFiveWeatherForcastUL").append(
       "<li>" + forecastDates(res) + "</li>",
-      "<li>" + "Temp:" + " " + item.main.temp + htmlTemp + "</li>",
+      "<li>" + "Temp:" + " " + item.main.temp + htmlTemp +"</li>",
       "<li>" + "Wind:" + " " + item.wind.speed + "</li>",
       "<li>" + "Humidity: " + " " + item.main.humidity + "</li>"
     );
     //$("#cityWeatherForcastUL").append(weatherForecastImage(res));
-    //}
   });
 };
 
@@ -169,11 +164,9 @@ function loopOverCityList() {
       cityNamesLi.addEventListener("click", function () {
         ajaxCurrentWeather(item).then(function (res) {
           showCurrentWeatherDetails(res);
-          //currentDate(res);
         });
         ajaxForecast(item).then(function (res) {
           show5DaysWeatherDetails(res);
-          //forecastDates(res);
         });
       });
     });
