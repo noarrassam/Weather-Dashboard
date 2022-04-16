@@ -16,7 +16,7 @@ It's an application that gets the current weather api and weather the forecast f
 
 - Localstorage
 
-# Deployment Link: https://openweathermap-dashboard.herokuapp.com/
+- Deployment Link: https://openweathermap-dashboard.herokuapp.com/
 
 ## **OpenWeatherMap Dashboard**
 
