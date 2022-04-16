@@ -1,0 +1,173 @@
+#weatherMap {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(28, 110, 222, 1) 100%,
+    rgba(255, 255, 255, 1) 100%
+  );
+
+  text-align: center;
+  height: auto;
+  border-radius: 5px;
+}
+
+#textWeatherDash {
+  color: white;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  font-size: x-large;
+}
+
+#searchCity {
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  font-size: x-large;
+  margin-left: 18px;
+  margin-top: 10px;
+}
+
+#citiesNamesUl li {
+  list-style: none;
+  background-color: silver;
+  list-style-position: inside;
+  margin: 10px 0 0 -25px;
+  position: relative;
+  text-align: center;
+  width: 50%;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#citiesNamesUl li:hover {
+  background: #555;
+}
+
+#search {
+  width: 46%;
+  height: 10%;
+  padding: 10px;
+  margin-left: 18px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+#btn {
+  background-color: lightskyblue;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  width: 47%;
+  margin-left: 15px;
+  margin-top: 15px;
+  border: 2px solid;
+  border-radius: 5px;
+}
+
+#searchBtn {
+  height: 10%;
+  padding: auto;
+}
+
+#border {
+  margin-top: 10px;
+  border-bottom: 2px solid black;
+  color: black;
+  width: 47%;
+  margin-left: 2%;
+}
+
+#cityWeatherForcastUL {
+  width: 100%;
+  list-style: none;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+  margin-top: 5%;
+  margin-right: 20%;
+  font-weight: bold;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: large;
+}
+
+#cityFiveWeatherForcastUL li {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(222, 186, 28, 1) 100%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  width: 100%;
+  color: white;
+  /* margin-right: 90%; */
+  padding: 0 0.5rem;
+  border-radius: 5px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#cityFiveWeatherForcastUL {
+  list-style: none;
+  width: 100%;
+  border-radius: 5px;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(154, 197, 221, 1) 100%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  background-color: azure;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background-color: aliceblue;
+}
+
+/* If you want the content centered horizontally and vertically */
+/* .centered {
+  margin-left: 25%;
+  margin-top: 20%;
+} */
+
+/* Style the image inside the centered container, if needed */
+
+.centered img {
+  width: 40px;
+  /* display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%; */
+}
+
+.centered1 {
+  margin-left: 290px;
+  margin-top: 150px;
+}
+
+#currentWeatherBorder {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(28, 110, 222, 1) 100%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  border-radius: 5px;
+}
+/* #menu-outer {
+  margin-right: 150px;
+} */

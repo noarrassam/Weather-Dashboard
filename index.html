@@ -7,18 +7,37 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css"
     />
+    <link rel="stylesheet" href="./main.css" />
   </head>
   <body>
-    <p>Weather Map</p>
-    <p>Enter City</p>
-
-    <div>
-      <input type="text" id="search" placeholder="Search..." />
-      <input type="button" value="Search" id="btn" />
+    <div class="split left">
+      <div class="centered1">
+        <div>
+          <p id="searchCity">Search for a City:</p>
+        </div>
+        <div>
+          <input type="text" id="search" placeholder="Search..." />
+        </div>
+        <div id="searchBtn">
+          <input type="button" value="Search" id="btn" />
+        </div>
+        <div id="border"></div>
+        <ul id="citiesNamesUl"></ul>
+      </div>
     </div>
-    <ul id="citiesNamesUl"></ul>
-    <ul id="cityWeatherForcastUL"></ul>
-    <ul id="cityFiveWeatherForcastUL"></ul>
+    <div class="split right">
+      <div id="weatherMap">
+        <p id="textWeatherDash">Weather Dashboard</p>
+      </div>
+      <div class="centered">
+        <div id="currentWeatherBorder">
+          <ul id="cityWeatherForcastUL"></ul>
+        </div>
+        <div id="menu-outer">
+          <ul id="cityFiveWeatherForcastUL"></ul>
+        </div>
+      </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="module" src="./index.js"></script>
   </body>
