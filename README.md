@@ -20,4 +20,4 @@ It's an application that gets the current weather api and weather the forecast f
 
 ## **OpenWeatherMap Dashboard**
 
-![![OpenWeatherMap]()](https://github.com/noarrassam/ajax-to-html/blob/main/Images/1.png)
+![![OpenWeatherMap]()]()
