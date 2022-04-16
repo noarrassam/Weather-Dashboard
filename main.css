@@ -26,6 +26,10 @@
   margin-top: 10px;
 }
 
+#wicon {
+  margin-left: 40px;
+}
+
 #citiesNamesUl li {
   list-style: none;
   background-color: silver;

@@ -37,7 +37,7 @@ let updateCityList = (city, res) => {
 
 let cuurentWeatherImage = (res) => {
   let img = document.createElement("img");
-  img.setAttribute("id", "wicon");
+  img.setAttribute("id", "wicon1");
   let icon = res.weather[0].icon;
   var iconurl = "http://openweathermap.org/img/w/" + icon + ".png";
   img.setAttribute("src", iconurl);
@@ -153,8 +153,8 @@ let show5DaysWeatherDetails = (res) => {
           item.temp.day +
           htmlTemp +
           "</li>",
-        "<li>" + "Wind:" + " " + item.humidity + " " + "MPH" + "</li>",
-        "<li>" + "Humidity: " + " " + item.wind_speed + " " + "%" + "</li>"
+        "<li>" + "Wind:" + " " + item.wind_speed + " " + "MPH" + "</li>",
+        "<li>" + "Humidity: " + " " + item.humidity + " " + "%" + "</li>"
       );
     }
   });
