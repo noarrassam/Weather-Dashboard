@@ -76,8 +76,8 @@
   margin-top: 10px;
   border-bottom: 2px solid black;
   color: black;
-  width: 47%;
-  margin-left: 2%;
+  width: 46.3%;
+  margin-left: 2.5%;
 }
 
 #cityWeatherForcastUL {
@@ -102,7 +102,6 @@
   );
   width: 100%;
   color: white;
-  /* margin-right: 90%; */
   padding: 0 0.5rem;
   border-radius: 5px;
   font-family: "Times New Roman", Times, serif;
@@ -130,32 +129,20 @@
   padding-top: 20px;
 }
 
-/* Control the left side */
 .left {
   left: 0;
   background-color: azure;
 }
 
-/* Control the right side */
 .right {
   right: 0;
-  background-color: aliceblue;
+  background-color: aliceblue;  
+  border-radius: 25px;
+  border: 2px solid #73ad21;
 }
-
-/* If you want the content centered horizontally and vertically */
-/* .centered {
-  margin-left: 25%;
-  margin-top: 20%;
-} */
-
-/* Style the image inside the centered container, if needed */
 
 .centered img {
   width: 40px;
-  /* display: block;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 50%; */
 }
 
 .centered1 {
@@ -172,6 +159,3 @@
   );
   border-radius: 5px;
 }
-/* #menu-outer {
-  margin-right: 150px;
-} */
