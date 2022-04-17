@@ -4,7 +4,7 @@
 
 ## Description
 
-It's an application that gets the current weather api and weather the forecast for 5 days by searching for a city and save to to local storage.
+It is an application that gets current weather and city forecast through API using Ajax and save city name into history using local storage.
 
 ## Used
 
